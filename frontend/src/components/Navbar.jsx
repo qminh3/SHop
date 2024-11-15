@@ -16,8 +16,14 @@ import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const {setShowSearch,showSearch,getCartItemsCount} =useContext(ShopContext)
+  const {setShowSearch,showSearch,getCartItemsCount,navigate,token,setToken,setCartItems} =useContext(ShopContext)
 
+  const logout = ()=>{
+    navigate('/login');
+    localStorage.removeItem('token');
+    setToken('');
+    setCartItems({})
+  }
   const handleToggleSearch = () => {
     setShowSearch(!showSearch);
   };
@@ -55,16 +61,17 @@ const Navbar = () => {
           icon={faMagnifyingGlass}
         />
         <div className="group relative">
-          <Link to='/login'>
-          <FontAwesomeIcon className="w-5 cursor-pointer" icon={faUser} />
-          </Link>
+         
+          <FontAwesomeIcon onClick={()=>token ? null : navigate('/login')} className="w-5 cursor-pointer" icon={faUser} />
+          {token && 
           <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
-            <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-700 rounded">
-              <p className="cursor-pointer hover:text-black">My Profile</p>
-              <p className="cursor-pointer hover:text-black">Order</p>
-              <p className="cursor-pointer hover:text-black">Logout</p>
-            </div>
+          <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-700 rounded">
+            <p className="cursor-pointer hover:text-black">My Profile</p>
+            <p onClick={()=>navigate('/order')} className="cursor-pointer hover:text-black">Order</p>
+            <p onClick={logout} className="cursor-pointer hover:text-black">Logout</p>
           </div>
+        </div>}
+          
         </div>
         <Link to="/cart" className="relative">
           <FontAwesomeIcon icon={faBagShopping} className="w-7 min-w-5" />

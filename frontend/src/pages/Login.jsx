@@ -1,29 +1,53 @@
-import React, { useState } from "react";
-
+import React, { useContext, useEffect, useState } from "react";
+import { ShopContext } from "../context/ShopContext";
+import axios from "axios";
+import { toast } from "react-toastify";
+const backendUrl = 'http://localhost:3000'
 const Login = () => {
-  const [currentState, setCurrentState] = useState("Sign up");
+  const [currentState, setCurrentState] = useState("Login");
+  const {token, setToken, navigate} =useContext(ShopContext) 
+  const [name,setName]=useState('')
+  const [password,setPassword]=useState('')
+  const [email,setEmail]=useState('')
+
   const onSubmitHandler = async (e)=>{
     e.preventDefault();
-    // Your form data validation and submission logic here
-    // Example:
-    // const formData = new FormData(event.target);
-    // const name = formData.get('name');
-    // const email = formData.get('email');
-    // const password = formData.get('password');
-    // const confirmPassword = formData.get('confirmPassword');
-    // if (validateForm(name, email, password, confirmPassword)) {
-    //   // Submit form data to the server
-    //   await submitForm(name, email, password);
-    // }
-  }
-  return (
-    // <form className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-700'>
-    //   <div className='inline-flex items-center gap-2 mb-2 mt-10'>
-    //     <p className='prata-regular text-3xl'>{currentState}</p>
-    //     <hr className='border-none h-[1.5px] w-8 bg-gray-800'/>
-    //   </div>
-    // </form>
+    try {
+      if (currentState === 'Sign up') {
+        // const response = await axios.post(backendUrl + '/api/user/register',{name,email,password})
+        // console.log(response.data)
+        axios.post(`${backendUrl}/api/user/register`, {name,email,password})
+         .then((response) => {
+            setToken(response.data.token)
+            localStorage.setItem('token', response.data.token)
+            // navigate('/dashboard')
+          })
+          .catch((error) => console.error(error));
+      }else{
+        
+        axios.post(`${backendUrl}/api/user/login`, {email,password})
+         .then((response) => {
+            setToken(response.data.token)
+            localStorage.setItem('token', response.data.token)
+            
+          })
+         .catch((error) => console.error(error));
 
+      }
+
+    } catch (error) {
+      console.log(error)
+      toast.error("Failed to login")
+    }
+    
+  }
+  useEffect(()=>{
+    if(token){
+      navigate('/')
+    }
+  },[token])
+  return (
+   
     <section className="bg-gray-50 dark:bg-gray-900 ">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <a
@@ -52,8 +76,10 @@ const Login = () => {
                     Your name
                   </label>
                   <input
-                    type="email"
-                    name="email"
+                    onChange={(e)=>setName(e.target.value)}
+                    value={name}
+                    type="text"
+                    name="name"
                     id="name"
                     class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name"
@@ -71,6 +97,8 @@ const Login = () => {
                   Your email
                 </label>
                 <input
+                onChange={(e)=>setEmail(e.target.value)}
+                value={email}
                   type="email"
                   name="email"
                   id="email"
@@ -87,6 +115,8 @@ const Login = () => {
                   Password
                 </label>
                 <input
+                onChange={(e)=>setPassword(e.target.value)}
+                value={password}
                   type="password"
                   name="password"
                   id="password"

@@ -12,6 +12,7 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import RelatedProducts from "../components/RelatedProducts";
+import BackToProduct from '../components/BackToProductButton'
 
 const Product = () => {
   const { productId } = useParams();
@@ -36,8 +37,10 @@ const Product = () => {
 
   // Check if product data is available before rendering it
   return productData ? (
+
     <div className="border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100">
       {/* Product data */}
+      <BackToProduct/>
       <div className="flex gap-12 sm:gap-12 flex-col sm:flex-row">
         {/* product image */}
 

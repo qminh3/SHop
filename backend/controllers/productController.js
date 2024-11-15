@@ -1,4 +1,4 @@
-import {v2 as cloudinary} from "cloudinary";
+import { v2 as cloudinary } from "cloudinary";
 import productModel from '../models/productModel.js'
 
 
@@ -20,6 +20,12 @@ const addProduct = async (req, res) => {
     const image3 = req.files.image3 && req.files.image3[0];
 
     const image4 = req.files.image4 && req.files.image4[0];
+
+    // console.log(
+    //   name,description,price,category,subCategory,sizes,bestseller,image1,image2,image
+    // )
+    // console.log(image1,image2,image3,image4)
+    // res.json({})
 
     const images = [image1, image2, image3, image4].filter((item)=>item !== undefined)
 
