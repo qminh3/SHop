@@ -134,11 +134,6 @@ const Collection = () => {
               onChange={clickSubCategory}/>
               Bottemwear
             </p>
-            <p className="flex gap-2">
-              <input type="checkbox" className="w-3" value={"Winterwear"} 
-              onChange={clickSubCategory}/>
-              Winterwear
-            </p>
           </div>
         </div>
       </div>

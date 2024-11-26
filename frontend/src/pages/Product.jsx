@@ -122,9 +122,6 @@ const Product = () => {
             {currency}
             {productData.price}
           </p>
-          <p className="mt-5 font-normal text-gray-700 md:w-4/5">
-            {productData.description}
-          </p>
           <div className="flex flex-col gap-4 my-8">
             <p>Kích cỡ:</p>
             <div className="flex gap-2">
@@ -143,13 +140,12 @@ const Product = () => {
           </div>
           <button 
           onClick={()=>addToCart(productData._id,size)}
-          className="bg-red-500 text-white px-8 py-3 active:bg-red-700 rounded-xl">
+          className="bg-gray-900 text-white px-8 py-3 active:bg-red-700 rounded-xl">
             Thêm vào giỏ
           </button>
           <hr className="mt-8 sm:ư-4/5" />
           <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
             <p>95% cotton </p>
-            <p>Miễn phí giao hàng Với đơn hàng trên 599.000 ₫.</p>
             <p>Đổi hàng miễn phí Trong 30 ngày kể từ ngày mua.</p>
           </div>
         </div>
@@ -158,17 +154,11 @@ const Product = () => {
       <div className="mt-20">
         <div className="flex">
           <b className="border px-5 py-3 text-sm">Description</b>
-          <p className="border px-5 py-3 text-sm">Review (73)</p>
+          <p className="border px-5 py-3 text-sm">Review (69)</p>
         </div>
         <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
-          <p>
-            The Basic tee is an honest new take on a classic. The tee uses super
-            soft, pre-shrunk cotton for true comfort and a dependable fit. They
-            are hand cut and sewn locally, with a special dye technique that
-            gives each tee it's own look. Looking to stock your closet?{" "}
-          </p>
-          <p>
-            The Basic tee also comes in a 3-pack or 5-pack at a bundle discount.
+          <p className="mt-5 font-normal text-gray-700 md:w-4/5">
+            {productData.description}
           </p>
         </div>
       </div>

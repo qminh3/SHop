@@ -90,7 +90,7 @@ const PlaceOrder = () => {
 
         {/* template */}
         <div className="sm:col-span-2">
-          <div className="mb-2 flex items-center gap-1">
+          {/* <div className="mb-2 flex items-center gap-1">
             <label
               for="saved-address-modal"
               className="block text-sm font-medium text-gray-900 dark:text-white"
@@ -135,7 +135,7 @@ const PlaceOrder = () => {
           >
             Choose one of your saved addresses
             <div class="tooltip-arrow" data-popper-arrow></div>
-          </div>
+          </div> */}
         </div>
 
         <div className="flex gap-3 ">
@@ -267,7 +267,7 @@ const PlaceOrder = () => {
           <Title text1={"PAYMENT"} text2={"METHOD"} />
           
           <div className="flex gap-3 flex-col lg:flex-row">
-            <div
+            {/* <div
               onClick={() => setMethod("stripe")}
               className="flex items-center gap-3 border p-2 px-3 cursor-pointer rounded-md"
             >
@@ -277,8 +277,8 @@ const PlaceOrder = () => {
                 }`}
               ></p>
               <img className="h-5 mx-4" src={assets.stripe_logo} alt="" />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               onClick={() => setMethod("razorpay")}
               className="flex items-center gap-3 border p-2 px-3 cursor-pointer rounded-md"
             >
@@ -288,7 +288,7 @@ const PlaceOrder = () => {
                 }`}
               ></p>
               <img className="h-5 mx-4" src={assets.razorpay_logo} alt="" />
-            </div>
+            </div> */}
             <div
               onClick={() => setMethod("cod")}
               className="flex items-center gap-3 border p-2 px-3 cursor-pointer rounded-md"
@@ -299,7 +299,7 @@ const PlaceOrder = () => {
                 }`}
               ></p>
               <p className="text-black text-sm font-medium mx-4">
-                CASH ON DELIVERY
+                COD
               </p>
             </div>
           </div>

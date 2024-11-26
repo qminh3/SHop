@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="pt-10">
       <div className="text-center text-2xl   border-t">
-        <section class="bg-white dark:bg-gray-900">
+        <section class="bg-white white:bg-gray-900">
           <div class="container px-6 py-12 mx-auto">
             <div>
               <Title text1={'CONTACT'} text2={'US'}/>
@@ -14,8 +14,8 @@ const Contact = () => {
                 Get in touch
               </h1>
 
-              <p class="mt-3 text-gray-500 dark:text-gray-400">
-                Our friendly team is always here to chat.
+              <p class="mt-3 text-gray-500 dark:text-gray-500">
+                Our team is always here.
               </p>
             </div>
             <div className="my-10 flex flex-col justify-center md:flex-row gap-10 mb-28">
@@ -24,7 +24,7 @@ const Contact = () => {
 
             <div class="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
               <div>
-                <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <span class="inline-block p-3 text-blue-100 rounded-full bg-blue-100/80 dark:bg-gray-900">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -41,19 +41,19 @@ const Contact = () => {
                   </svg>
                 </span>
 
-                <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-white">
+                <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-gray">
                   Email
                 </h2>
-                <p class="mt-2 text-gray-500 dark:text-gray-400">
+                <p class="mt-2 text-gray-500 dark:text-gray-500">
                   Our friendly team is here to help.
                 </p>
-                <p class="mt-2 text-blue-500 dark:text-blue-400">
-                  hello@merakiui.com
+                <p class="mt-2 text-blue-500 dark:text-gray-900">
+                  minh.changquang30@hcmut.edu.vn
                 </p>
               </div>
 
               <div>
-                <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <span class="inline-block p-3 text-blue-100 rounded-full bg-blue-100/80 dark:bg-gray-900">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -75,19 +75,19 @@ const Contact = () => {
                   </svg>
                 </span>
 
-                <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-white">
+                <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-gray">
                   Office
                 </h2>
-                <p class="mt-2 text-gray-500 dark:text-gray-400">
-                  Come say hello at our office HQ.
+                <p class="mt-2 text-gray-500 dark:text-gray-500">
+                  Come to our office.
                 </p>
-                <p class="mt-2 text-blue-500 dark:text-blue-400">
-                  100 Smith Street Collingwood VIC 3066 AU
+                <p class="mt-2 text-blue-500 dark:text-gray-900">
+                  122 Ton Dan Street Ward 10 District 4 HCM city
                 </p>
               </div>
 
               <div>
-                <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <span class="inline-block p-3 text-blue-100 rounded-full bg-blue-100/80 dark:bg-gray-900">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -104,14 +104,14 @@ const Contact = () => {
                   </svg>
                 </span>
 
-                <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-white">
+                <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-gray">
                   Phone
                 </h2>
-                <p class="mt-2 text-gray-500 dark:text-gray-400">
+                <p class="mt-2 text-gray-500 dark:text-gray-500">
                   Mon-Fri from 8am to 5pm.
                 </p>
-                <p class="mt-2 text-blue-500 dark:text-blue-400">
-                  +1 (555) 000-0000
+                <p class="mt-2 text-blue-500 dark:text-gray-900">
+                  (+84)911420863
                 </p>
               </div>
             </div>

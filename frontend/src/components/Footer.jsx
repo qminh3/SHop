@@ -6,7 +6,7 @@ const Footer = () => {
       <div>
         <img src={assets.logo} alt="" className="mb-5 w-32" />
         <p className="w-full md:w-2/3 text-gray-600">
-          Ashley's Furniture Shop is a premium furniture retailer offering
+          G4 Shop is a premium clothes shop offering
           high-quality, customizable pieces. We strive to create a space where
           customers can express themselves and enjoy our products.
         </p>
@@ -24,8 +24,9 @@ const Footer = () => {
       <div>
         <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
         <ul className="flex flex-col gap-1 text-gray-600">
-          <li>+84 (0911420863)</li>
+          <li>(+84)911420863</li>
           <li>minh.changquang30@hcmut.edu.vn</li>
+          <li>122 Ton Dan Street Ward 10 District 4 HCM city</li>
         </ul>
       </div>
 

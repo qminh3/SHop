@@ -83,7 +83,7 @@ const Orders = ({ token }) => {
               <select onChange={(event)=>statusHandler(event,order._id)} value={order.status} className="p-2 font-semibold">
                 <option value="Order Placed">Order Placed</option>
                 <option value="Packing">Packing</option>
-                <option value="Shipping">Shipping</option>
+                <option value="Delivering">Delivering</option>
                 <option value="Delivered">Delivered</option>
               </select>
             </div>

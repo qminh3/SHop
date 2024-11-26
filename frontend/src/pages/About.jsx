@@ -1,7 +1,6 @@
 import React from "react";
 import Title from "../components/Title";
 import { assets } from "../assets/assets";
-import NewsletterBox from '../components/NewsletterBox'
 
 const About = () => {
   return (
@@ -17,20 +16,12 @@ const About = () => {
           alt=""
         />
         <div className="flex flex-col justify-center gap-6 md:w-2/4 text-gray-500">
+          <b className="text-gray-600">Welcome to G4 Shop</b>
           <p>
-            We're a global online retailer for fashion-loving 20-somethings with
-            the aim of giving our customers the confidence to be whoever they
-            want to be – and the same goes for our people.{" "}
+            At G4 Shop, we’re more than just an online retailer – we’re a global destination for young, trend-savvy individuals who embrace their unique style. Our mission is to empower our customers to confidently express who they are, both through fashion and lifestyle choices.
           </p>
           <p>
-            All ASOS content, including edits, social channels and more, is
-            created to inspire our customers’ own personal style – and it’s the
-            people behind the scenes who make that happen.
-          </p>
-          <b className="text-gray-600">Our mission</b>
-          <p>
-            Our vision is to be the world’s number one fashion destination for
-            fashion-loving 20-somethings
+            Every piece of content we create, from exclusive collections to engaging social media stories, is designed to spark inspiration and celebrate individuality. Behind the scenes, our passionate team works tirelessly to bring your vision of self-expression to life.
           </p>
         </div>
       </div>
@@ -38,7 +29,7 @@ const About = () => {
         <Title text1={"WHY"} text2={"CHOOSE US"} />
         <div className="container mx-auto max-w-5xl flex gap-12 flex-wrap items-start justify-center md:justify-between my-10">
           <div className="grid gap-4 justify-items-center text-center md:flex-1">
-            <div className=" rounded-full border-8 border-amber-400 p-4 ">
+            <div className=" rounded-full border-8 border-amber-400 p-4 border-gray-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -58,7 +49,7 @@ const About = () => {
             <p>Our products are secure and private out-of-the-box</p>
           </div>
           <div className="grid gap-4 justify-items-center text-center md:flex-1">
-            <div className=" rounded-full border-8 border-amber-400 p-4 ">
+            <div className=" rounded-full border-8 border-amber-400 p-4 border-gray-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -75,10 +66,10 @@ const About = () => {
               </svg>
             </div>
             <h3 className="text-3xl font-bold">Efficient</h3>
-            <p>Feel good about your wallet and the environment</p>
+            <p>Not only save your wallet but also the environment</p>
           </div>
           <div className="grid gap-4 justify-items-center text-center md:flex-1">
-            <div className=" rounded-full border-8 border-amber-400 p-4 ">
+            <div className=" rounded-full border-8 border-amber-400 p-4 border-gray-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -95,12 +86,11 @@ const About = () => {
               </svg>
             </div>
             <h3 className="text-3xl font-bold">Proven</h3>
-            <p>Leading the Smart Home world for 10 years</p>
+            <p>Leading the Smart Home world for the next 10 years</p>
           </div>
         </div>
       </div>
       
-      <NewsletterBox/>
     </div>
     // Add more content about us here...
   );
