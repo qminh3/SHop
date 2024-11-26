@@ -1,19 +1,46 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
+import axios from "axios";
 
 const Orders = () => {
   const {
-    navigate,
-    products,
+    token,
     currency,
-    delivery_fee,
-    showSearch,
-    setSearch,
-    setShowSearch,
-    cartItems,
-    updateQuanity,
+    backendUrl,
   } = useContext(ShopContext);
+
+  const [orderData,setOrderData] = useState([])
+
+  const loadOrderData = async () => {
+    try {
+      if(!token) {
+        return null
+      }
+
+      const response = await axios.post(backendUrl+'/api/order/userorder',{},{headers:{token}})
+      console.log(response.data)
+      if(response.data.success) {
+        let allOrderItem = []
+        response.data.orders.map((order)=>{
+          order.items.map((item)=>{
+            item['status'] = order.status
+            item['payment'] = order.payment
+            item['paymentMethod'] = order.paymentMethod
+            item['date'] = order.date
+            allOrderItem.push(item)
+          })
+        })
+        setOrderData(allOrderItem.reverse());
+      }
+    } catch (error) {
+      
+    }
+  }
+
+  useEffect(()=>{
+    loadOrderData()
+  },[token])
 
   // Render orders here
   return (
@@ -23,7 +50,7 @@ const Orders = () => {
       </div>
 
       <div>
-        {products.slice(1, 4).map((item, index) => {
+        {orderData.map((item, index) => {
           return (
             <div
               key={index}
@@ -38,11 +65,14 @@ const Orders = () => {
                       {currency}
                       {item.price}
                     </p>
-                    <p>Quantity: 1</p>
-                    <p>Size: M</p>
+                    <p>Quantity: {item.quanity}</p>
+                    <p>Size: {item.size}</p>
                   </div>
                   <p className="mt-4">
-                    Date: <span className="text-gray-400">25, Jul, 2024</span>
+                    Date: <span className="text-gray-400">{new Date(item.date).toDateString()}</span>
+                  </p>
+                  <p className="mt-4">
+                    Payment: <span className="text-gray-400">{item.paymentMethod}</span>
                   </p>
                 </div>
               </div>
@@ -50,9 +80,9 @@ const Orders = () => {
                
                 <div className="flex items-center gap-2">
                   <p className="min-w-2 h-2 rounded-full bg-green-500"></p>
-                  <p className="text-sm md:text-base">Ready to ship</p>
+                  <p className="text-sm md:text-base">{item.status}</p>
                 </div>
-                <button className=" px-4 py-2 border text-sm font-medium rounded-sm ">
+                <button onClick={loadOrderData} className=" px-4 py-2 border text-sm font-medium rounded-sm ">
                   Track Order
                 </button>
               </div>

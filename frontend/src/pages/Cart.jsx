@@ -19,26 +19,29 @@ const Cart = () => {
 
   const [cartData, setCartData] = useState([]);
   useEffect(() => {
-    const tempData = [];
 
-    for (const products in cartItems) {
-      for (const product in cartItems[products]) {
-        if (cartItems[products][product] > 0) {
-          // const item = products.find(p => p._id === product)
-          // item.quantity = cartItems[products][product]
-          // tempData.push(item)
-          tempData.push({
-            _id: products,
-            size: product,
-            quantity: cartItems[products][product],
-            currency: currency,
-            delivery_fee: delivery_fee,
-          });
+    if (products.length > 0) {
+      const tempData = [];
+
+      for (const items in cartItems) {
+        for (const item in cartItems[items]) {
+          if (cartItems[items][item] > 0) {
+            // const item = products.find(p => p._id === product)
+            // item.quantity = cartItems[products][product]
+            // tempData.push(item)
+            tempData.push({
+              _id: items,
+              size: item,
+              quantity: cartItems[items][item],
+            });
+          }
         }
       }
+      setCartData(tempData);
     }
-    setCartData(tempData);
-  }, [cartItems]);
+
+
+  }, [cartItems, products]);
   return (
     <div className="border-t pt-14">
       <div className="text-2xl mb-3">
