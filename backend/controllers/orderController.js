@@ -70,7 +70,9 @@ const userOrders = async (req, res) => {
 
 const updateOrderStatus = async (req, res) => {
     try {
-        
+        const {orderId,status} = req.body;
+        await orderModel.findByIdAndUpdate(orderId,{status})
+        res.json({success:true,message:"Status updated"})
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Lỗi server", success: false });
