@@ -64,7 +64,7 @@ const Product = () => {
         {/* Product detail */}
         <div className="flex-1">
           <h1 className="font-medium text-2xl mt-3">{productData.name}</h1>
-          <div className="flex items-center gap-1 mt-2">
+          {/* <div className="flex items-center gap-1 mt-2">
             <svg
               className="w-4 h-4 text-yellow-300 ms-1"
               aria-hidden="true"
@@ -113,11 +113,11 @@ const Product = () => {
             <span className="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
             <a
               href="#"
-              className="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white"
+              className="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-gray"
             >
               73 reviews
             </a>
-          </div>
+          </div> */}
           <p className="mt-5 text-3xl font-medium">
             {currency}
             {productData.price}
@@ -154,7 +154,7 @@ const Product = () => {
       <div className="mt-20">
         <div className="flex">
           <b className="border px-5 py-3 text-sm">Description</b>
-          <p className="border px-5 py-3 text-sm">Review (69)</p>
+          {/* <p className="border px-5 py-3 text-sm">Review (69)</p> */}
         </div>
         <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
           <p className="mt-5 font-normal text-gray-700 md:w-4/5">

@@ -174,6 +174,9 @@ const Cart = () => {
       </div>
       <div className="flex justify-end my-20 ">
         <div className="w-full sm:w-[450px]">
+          <div className="text-2xl">
+          <Title text1={"CART"} text2={"TOTALS"}></Title>
+          </div>
           <div className="flex justify-between">
               <p>Total</p>
               <p>{currency}{getTotalCartAmount()}.00</p>
