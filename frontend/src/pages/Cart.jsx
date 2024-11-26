@@ -15,6 +15,7 @@ const Cart = () => {
     setShowSearch,
     cartItems,
     updateQuanity,
+    getTotalCartAmount,
   } = useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
@@ -173,11 +174,14 @@ const Cart = () => {
       </div>
       <div className="flex justify-end my-20 ">
         <div className="w-full sm:w-[450px]">
-          <CartTotal />
+          <div className="flex justify-between">
+              <p>Total</p>
+              <p>{currency}{getTotalCartAmount()}.00</p>
+          </div>
           <div className="w-full text-end">
             <button
               onClick={() => navigate("/place-order")}
-              className="bg-[#fd5335] text-white mt-10 px-4 py-3 rounded-lg "
+              className="bg-[#fd5335] text-white mt-10 px-4 py-3 rounded-lg bg-gray-900"
             >
               PROCEED TO CHECKOUT
             </button>
@@ -191,7 +195,7 @@ const Cart = () => {
               onClick={() => navigate("/collection")}
               href="#"
               title=""
-              className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-500"
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-600"
             >
               Continue Shopping
               <svg

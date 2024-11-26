@@ -19,11 +19,11 @@ const PlaceOrder = () => {
     firstName:'',
     lastName:'',
     email:'',
+    address:'',
     street:'',
+    ward:'',
+    district:'',
     city:'',
-    state:'',
-    zipcode:'',
-    country:'',
     phone:''
   });
 
@@ -142,7 +142,7 @@ const PlaceOrder = () => {
           <div>
             <label
               for="first_name_billing_modal"
-              class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray"
             >
               {" "}
               First Name*{" "}
@@ -159,7 +159,7 @@ const PlaceOrder = () => {
           <div>
             <label
               for="last_name_billing_modal"
-              class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+              class="mb-2 block text-sm font-medium text-gray-900 dark:text-gray"
             >
               {" "}
               Last Name*{" "}
@@ -176,7 +176,7 @@ const PlaceOrder = () => {
         </div>
         <label
           for="first_name_billing_modal"
-          class=" block text-sm font-medium text-gray-900 dark:text-white"
+          class=" block text-sm font-medium text-gray-900 dark:text-gray"
         >
           {" "}
           Email*{" "}
@@ -191,20 +191,46 @@ const PlaceOrder = () => {
         />
         <label
           for="first_name_billing_modal"
-          class=" block text-sm font-medium text-gray-900 dark:text-white"
+          class=" block text-sm font-medium text-gray-900 dark:text-gray"
         >
           {" "}
           Address*{" "}
         </label>
         <input
           onChange = {onChangeHandler} 
-          name = 'street' 
-          value = {formData.street}
+          name = 'address' 
+          value = {formData.address}
           type="text"
-          placeholder="Street"
+          placeholder="Address"
           className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
         />
         <div className="flex gap-3">
+          <input
+            onChange = {onChangeHandler} 
+            name = 'street' 
+            value = {formData.street}
+            type="text"
+            placeholder="Street"
+            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
+          />
+          <input
+            onChange = {onChangeHandler} 
+            name = 'ward' 
+            value = {formData.ward}
+            type="text"
+            placeholder="Ward"
+            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
+          />
+        </div>
+        <div className="flex gap-3">
+          <input
+            onChange = {onChangeHandler} 
+            name = 'district' 
+            value = {formData.district}
+            type="text"
+            placeholder="District"
+            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
+          />
           <input
             onChange = {onChangeHandler} 
             name = 'city' 
@@ -213,36 +239,10 @@ const PlaceOrder = () => {
             placeholder="City"
             className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
           />
-          <input
-            onChange = {onChangeHandler} 
-            name = 'state' 
-            value = {formData.state}
-            type="text"
-            placeholder="State"
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
-          />
-        </div>
-        <div className="flex gap-3">
-          <input
-            onChange = {onChangeHandler} 
-            name = 'zipcode' 
-            value = {formData.zipcode}
-            type="number"
-            placeholder="Zipcode"
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
-          />
-          <input
-            onChange = {onChangeHandler} 
-            name = 'country' 
-            value = {formData.country}
-            type="text"
-            placeholder="Country"
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
-          />
         </div>
         <label
           for="first_name_billing_modal"
-          class=" block text-sm font-medium text-gray-900 dark:text-white"
+          class=" block text-sm font-medium text-gray-900 dark:text-gray"
         >
           {" "}
           Phone number*{" "}
@@ -305,7 +305,7 @@ const PlaceOrder = () => {
           </div>
 
           <div className="w-full text-end mt-8 ">
-            <button type='submit' className="w-full py-2 text-white bg-primary-500 rounded-md hover:bg-primary-600 dark:bg-primary-400 dark:text-white">
+            <button type='submit' className="w-full py-2 text-white rounded-md bg-gray-900 dark:text-white">
               {" "}
               Continue to Payment{" "}
             </button>
