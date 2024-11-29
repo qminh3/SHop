@@ -41,7 +41,7 @@ const List = ({token}) => {
   }
   return (
     <>
-      <b className="mb-2 text-red-500 text-2xl">Tất cả sản phẩm</b>
+      <b className="mb-2 text-gray-900 text-2xl">Tất cả sản phẩm</b>
       <div className="flex flex-col gap-2 ">
   
         

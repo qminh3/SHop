@@ -6,9 +6,7 @@ import { toast } from "react-toastify";
 const Add = ({ token }) => {
   const [image1, setImage1] = useState(false);
   const [image2, setImage2] = useState(false);
-
   const [image3, setImage3] = useState(false);
-
   const [image4, setImage4] = useState(false);
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -67,6 +65,7 @@ const Add = ({ token }) => {
       onSubmit={onSubmitHandler}
       className="flex flex-col w-full items-start gap-3"
     >
+      <b className="mb-2 text-gray-900 text-2xl">Thêm sản phẩm</b>
       <div>
         <p className="mb-2">Upload Image</p>
 

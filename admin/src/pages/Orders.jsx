@@ -50,7 +50,7 @@ const Orders = ({ token }) => {
 
   return (
     <div>
-      <h3>Trang Order</h3>
+      <h3 className="mb-2 text-gray-900 text-2xl">Trang Order</h3>
       <div>
         {
           orders.map((order, index) => (
