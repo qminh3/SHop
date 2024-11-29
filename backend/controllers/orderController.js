@@ -44,7 +44,33 @@ const placeOrderRazorpay = async (req, res) => {
         res.status(500).json({ message: "Lỗi server", success: false });
     }
 }
+const placeOrderVisa = async (req, res) => {
+    try {
+        const { userId, items, amount, address, cardNumber, expiryDate, cvv } = req.body;
+        const orderData = {
+            userId,
+            items,
+            address,
+            amount,
+            paymentMethod: "Visa",
+            payment: true, 
+            date: Date.now(),
+        };
 
+        
+        const newOrder = new orderModel(orderData);
+        await newOrder.save();
+
+        
+        await userModel.findByIdAndUpdate(userId, { cartData: {} });
+
+        res.json({ success: true, message: "Order Placed and Payment Successful!" });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Lỗi server", success: false });
+    }
+};
 const allOrders = async (req, res) => {
     try {
         const orders = await orderModel.find({});
@@ -79,4 +105,4 @@ const updateOrderStatus = async (req, res) => {
     }
 }
 
-export { placeOrder, placeOrderRazorpay, placeOrderStripe, userOrders, allOrders, updateOrderStatus };
+export { placeOrder, placeOrderVisa, placeOrderRazorpay, placeOrderStripe, userOrders, allOrders, updateOrderStatus };
