@@ -295,7 +295,7 @@ const Product = () => {
             </div>
 
             <ul className="mt-6 list-disc space-y-3 pl-4 text-sm text-gray-500">
-              <li>Tên sản phẩm: </li>
+              <li>Tên sản phẩm: {productData.name} </li>
               <li>
                 Giá: {productData.price} {currency}
               </li>
