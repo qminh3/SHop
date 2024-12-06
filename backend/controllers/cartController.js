@@ -1,6 +1,6 @@
 import userModel from "../models/userModel.js";
 
-
+ // thêm sản phẩm vào giỏ hàng 
 const addToCart = async (req,res) => {
     try {
         const { userId, itemId, size} = req.body;
@@ -30,6 +30,7 @@ const addToCart = async (req,res) => {
     }
 }
 
+// cập nhật giỏ hàng của user
 const updateCart = async (req,res) => {
     try {
         const { userId, itemId, size, quanity} = req.body;
@@ -48,6 +49,7 @@ const updateCart = async (req,res) => {
     }
 }
 
+// lấy user cart
 const getUserCart = async (req,res) => {
     try {
         const { userId } = req.body;

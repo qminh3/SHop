@@ -5,7 +5,8 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: "#ecfeff",
+          10: '#fe8528',
+          50: "#fea928",
           100: "#cffafe",
           200: "#a5f3fc",
           300: "#67e8f9",
@@ -17,10 +18,18 @@ export default {
           900: "#164e63",
           950: "#083344",
         },
+        secondary: "#ed8900",
+        success: "#28a745",
+        info: "#17a2b8",
+        warning: "#ffc107",
+        danger: "#dc3545",
+        light: "#f8f9fa",
+        color: "#7B5213",
       },
     },
   },
   fontFamily: {
+  
     body: [
       "Inter",
       "ui-sans-serif",

@@ -6,10 +6,10 @@ import React from "react";
 const BackToProductButton = () => {
   return (
     <div>
-      <Link to="/collection" href="/" passHref>
+      <Link to="/collection" href="/" passHref >
         <a
           aria-label="back-to-products"
-          className="border "
+          
         >
           <FontAwesomeIcon
             icon={faArrowLeft}
