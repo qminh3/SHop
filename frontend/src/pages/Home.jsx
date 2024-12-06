@@ -10,6 +10,7 @@ import TopProducts from "../components/TopProducts";
 import Banner from "../components/Banner";
 import Testimonials from "../components/Testimonials";
 
+
 const Home = () => {
   const [orderPopup, setOrderPopup] = useState(false);
   const handleOrderPopup = () => {
@@ -21,7 +22,7 @@ const Home = () => {
       offset: 100,
       duration: 800,
       easing: "ease-in-sine",
-      delay: 500,
+      delay: 100,
     });
     AOS.refresh();
   }, []);
@@ -34,6 +35,7 @@ const Home = () => {
       <TopProducts handleOrderPopup={handleOrderPopup} />
       <Banner/>
       <Testimonials/>
+     
      
     </div>
   );

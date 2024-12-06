@@ -9,7 +9,7 @@ const Contact = () => {
         <section class="bg-white white:bg-gray-900">
           <div class="container px-6 py-12 mx-auto">
             <div>
-              <Title text1={'CONTACT'} text2={'US'}/>
+              <Title text1={'Thông tin'} text2={'liên lạc'}/>
               <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
                 Get in touch
               </h1>

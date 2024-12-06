@@ -73,7 +73,7 @@ const Collection = () => {
   // handle sort change
 
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-9 pt-10 border-t">
+    <div className="flex flex-col sm:flex-row gap-1 sm:gap-9 pt-10 border-t mb-10">
       {/* filer option bên trái  */}
       <div className="min-w-60">
         <p
@@ -159,7 +159,7 @@ const Collection = () => {
         <div className="flex justify-between text-base sm:text-2xl mb-5">
           {/* <Title text1={"ALL"} text2={"COLLECTION"} /> */}
           
-          <p className="text-2xl font-bold text-secondary ">ALL COLLECTION </p>
+          <p className="text-2xl font-bold text-black ">ALL COLLECTION </p>
           {/* SAP XEP DANH SACH */}
           <select
             name=""

@@ -50,7 +50,7 @@ const Cart = () => {
         <Title
           text1={"Giỏ hàng"}
           text2={"của bạn"}
-          className="text-2xl text-black"
+          className="text-2xl text-primary-10"
         />
       </div>
 
