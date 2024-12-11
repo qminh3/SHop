@@ -150,7 +150,7 @@ const PlaceOrder = () => {
           <div className="mb-2 flex items-center gap-1">
             <label
               for="saved-address-modal"
-              className="block text-sm font-medium text-gray-900 dark:text-white"
+              className="block text-sm font-medium text-gray-900 dark:text-gray"
             >
               {" "}
               Saved Address{" "}

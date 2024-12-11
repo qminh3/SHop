@@ -118,7 +118,7 @@ const Collection = () => {
               <input
                 type="checkbox"
                 className="w-3"
-                value={"Kids"}
+                value={"Kid"}
                 onChange={clickCategory}
               />
               Đồ Trẻ Em
@@ -150,6 +150,15 @@ const Collection = () => {
                 onChange={clickSubCategory}
               />
               Quần
+            </p>
+            <p className="flex gap-2">
+              <input
+                type="checkbox"
+                className="w-3"
+                value={"Winterwear"}
+                onChange={clickSubCategory}
+              />
+              Đồ mùa đông
             </p>
           </div>
         </div>
