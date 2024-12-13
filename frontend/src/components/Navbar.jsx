@@ -31,6 +31,7 @@ const Navbar = () => {
     setToken("");
     setCartItems({});
   };
+
   const handleToggleSearch = () => {
     setShowSearch(!showSearch);
   };
@@ -41,7 +42,7 @@ const Navbar = () => {
         <img src={assets.logo} className="w-20" alt="" />
       </Link>
 
-      <ul className="hidden sm:flex gap-5 text-sm text-gray-900 ">
+      <ul className="hidden sm:flex gap-5 text-sm text-gray-900">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p className="font-bold text-gray-600">HOME</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-secondary hidden" />
@@ -59,6 +60,7 @@ const Navbar = () => {
           <hr className="w-2/4 border-none h-[1.5px]  bg-secondary hidden" />
         </NavLink>
       </ul>
+
       <div className="flex items-center gap-5">
         <FontAwesomeIcon
           onClick={() => handleToggleSearch()}
@@ -74,7 +76,6 @@ const Navbar = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            
           >
             <path
               strokeLinecap="round"
@@ -86,12 +87,17 @@ const Navbar = () => {
           {token && (
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-700 rounded">
-                <p className="cursor-pointer hover:text-black">My Profile</p>
+                <p
+                  onClick={() => navigate("/profile")}
+                  className="cursor-pointer hover:text-black"
+                >
+                  My Profile
+                </p>
                 <p
                   onClick={() => navigate("/orders")}
                   className="cursor-pointer hover:text-black"
                 >
-                  Order
+                  Orders
                 </p>
                 <p onClick={logout} className="cursor-pointer hover:text-black">
                   Logout
@@ -100,6 +106,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
+
         <Link to="/cart" className="relative">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -120,16 +127,16 @@ const Navbar = () => {
             {getCartItemsCount()}
           </p>
         </Link>
+
         <FontAwesomeIcon
           onClick={() => setVisible(true)}
           icon={faBars}
           className="w-5 cursor-pointer sm:hidden"
         />
-        {/* {dành cho mobie} */}
+
+        {/* Menu di động */}
         <div
-          className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${
-            visible ? "w-full" : "w-0"
-          }`}
+          className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? "w-full" : "w-0"}`}
         >
           <div className="flex flex-col text-gray-600">
             <div
@@ -147,7 +154,7 @@ const Navbar = () => {
             <NavLink
               onClick={() => setVisible(false)}
               to="/"
-              className=" py-2 pl-6 boder cursor-pointer"
+              className="py-2 pl-6 boder cursor-pointer"
             >
               Home
             </NavLink>
@@ -161,14 +168,14 @@ const Navbar = () => {
             <NavLink
               onClick={() => setVisible(false)}
               to="/about"
-              className=" py-2 pl-6 boder cursor-pointer"
+              className="py-2 pl-6 boder cursor-pointer"
             >
               ABOUT
             </NavLink>
             <NavLink
               onClick={() => setVisible(false)}
               to="/contact"
-              className=" py-2 pl-6 boder cursor-pointer"
+              className="py-2 pl-6 boder cursor-pointer"
             >
               CONTACT
             </NavLink>

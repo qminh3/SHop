@@ -8,25 +8,26 @@ const ProductsData = [
   {
     id: 1,
     img: Img1,
-    title: "Casual Wear",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    title: "Unisex Style", 
+    description: 
+      "Phong cách unisex phù hợp với mọi lứa tuổi và xu hướng, mang lại sự trẻ trung và năng động.",
   },
   {
     id: 2,
     img: Img2,
-    title: "Printed shirt",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    title: "Men shirt", 
+    description: 
+      "Áo sơ mi nam thiết kế hiện đại, thanh lịch, phù hợp cho cả môi trường công sở lẫn phong cách đời thường.",
   },
   {
     id: 3,
     img: Img3,
     title: "Women shirt",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: 
+      "Áo sơ mi nữ với thiết kế tinh tế, dễ dàng phối hợp với nhiều trang phục, mang đến vẻ đẹp nữ tính và sang trọng.",
   },
 ];
+
 const TopProducts = ({ handleOrderPopup }) => {
   return (
     <div>
@@ -34,10 +35,10 @@ const TopProducts = ({ handleOrderPopup }) => {
         {/* Header section */}
         <div className="text-left mb-24">
           <p data-aos="fade-up" className="text-xl text-primary-50">
-            Top Rated Products for you
+            
           </p>
-          <h1 data-aos="fade-up" className="text-3xl font-bold">
-            Best Products
+          <h1 data-aos="fade-up" className="text-3xl font-bold text-orange-500">
+            Top sản phẩm có đánh giá cao
           </h1>
           
         </div>

@@ -68,13 +68,13 @@ const BestSeller = () => {
         {/* Header section */}
         <div className="text-center mb-10 max-w-[600px] mx-auto">
           <p data-aos="fade-up" className="text-xl text-primary-50">
-            Top Selling Products for you
+            Best Seller
           </p>
           <h1
             data-aos="fade-up"
             className="text-3xl font-bold text-primary-500 "
           >
-            Products
+            Sản phẩm
           </h1>
         </div>
         {/* Body section */}
@@ -95,7 +95,7 @@ const BestSeller = () => {
           <div className="flex justify-center">
             <Link to="/collection" href="/" passHref>
               <button className="text-center mt-10 cursor-pointer bg-primary-50 text-white py-1 px-5 rounded-md hover:bg-secondary">
-                View All Product
+                Xem tất cả sản phẩm
               </button>
             </Link>
           </div>

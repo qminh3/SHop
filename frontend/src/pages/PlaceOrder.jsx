@@ -146,14 +146,14 @@ const PlaceOrder = () => {
         </div>
 
         {/* Địa chỉ đã lưu */}
-        <div className="sm:col-span-2">
+        {/* <div className="sm:col-span-2">
           <div className="mb-2 flex items-center gap-1">
             <label
               for="saved-address-modal"
               className="block text-sm font-medium text-gray-900 dark:text-gray"
             >
               {" "}
-              Saved Address{" "}
+              Địa chỉ đã lưu{" "}
             </label>
             <svg
               data-tooltip-target="saved-address-modal-desc-2"
@@ -197,7 +197,7 @@ const PlaceOrder = () => {
             Choose one of your saved addresses
             <div class="tooltip-arrow" data-popper-arrow></div>
           </div>
-        </div>
+        </div> */}
 
         {/* Thông tin giao hàng  */}
         <div className="flex gap-3 ">
@@ -335,7 +335,7 @@ const PlaceOrder = () => {
         </div>
 
         <div className="mt-12">
-          <Title text1={"PAYMENT"} text2={"METHOD"} />
+          <Title text1={"PHƯƠNG THỨC"} text2={"THANH TOÁN"} />
 
           <div className="flex gap-3 flex-col lg:flex-row">
             {/* COD */}
@@ -548,7 +548,7 @@ const PlaceOrder = () => {
               type="submit"
               className="w-full py-2 text-white rounded-md bg-gray-900 dark:text-white"
             >
-              Confirm Payment
+              Xác nhận thanh toán
             </button>
           </div>
         </div>

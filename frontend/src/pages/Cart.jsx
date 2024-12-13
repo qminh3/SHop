@@ -179,7 +179,7 @@ const Cart = () => {
           <Title text1={"CART"} text2={"TOTALS"}></Title>
           </div>
           <div className="flex justify-between">
-              <p>Total</p>
+              <p>Tổng tiền</p>
               <p>{currency}{getTotalCartAmount()}.00</p>
           </div>
           <div className="w-full text-end">
@@ -187,13 +187,13 @@ const Cart = () => {
               onClick={() => navigate("/place-order")}
               className="bg-[#fd5335] text-white mt-10 px-4 py-3 rounded-lg bg-gray-900"
             >
-              PROCEED TO CHECKOUT
+              Tiến hành thanh toán
             </button>
           </div>
           <div className=" mt-5 flex items-center justify-end gap-2">
             <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
               {" "}
-              or{" "}
+              hoặc{" "}
             </span>
             <a
               onClick={() => navigate("/collection")}
@@ -201,7 +201,7 @@ const Cart = () => {
               title=""
               className="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline dark:text-primary-600"
             >
-              Continue Shopping
+              Tiếp tục mua hàng
               <svg
                 className="h-5 w-5"
                 aria-hidden="true"

@@ -44,9 +44,9 @@ const Contact = () => {
                 <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-gray">
                   Email
                 </h2>
-                <p class="mt-2 text-gray-500 dark:text-gray-500">
+               {/*  <p class="mt-2 text-gray-500 dark:text-gray-500">
                   Our friendly team is here to help.
-                </p>
+                </p> */}
                 <p class="mt-2 text-blue-500 dark:text-gray-900">
                   minh.changquang30@hcmut.edu.vn
                 </p>
@@ -78,9 +78,9 @@ const Contact = () => {
                 <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-gray">
                   Office
                 </h2>
-                <p class="mt-2 text-gray-500 dark:text-gray-500">
+                {/* <p class="mt-2 text-gray-500 dark:text-gray-500">
                   Come to our office.
-                </p>
+                </p> */}
                 <p class="mt-2 text-blue-500 dark:text-gray-900">
                   122 Ton Dan Street Ward 10 District 4 HCM city
                 </p>
@@ -105,7 +105,7 @@ const Contact = () => {
                 </span>
 
                 <h2 class="mt-4 text-lg font-medium text-gray-800 dark:text-gray">
-                  Phone
+                  Hotline
                 </h2>
                 <p class="mt-2 text-gray-500 dark:text-gray-500">
                   Mon-Fri from 8am to 5pm.

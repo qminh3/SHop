@@ -176,9 +176,9 @@ const Collection = () => {
             className="border-2 border-gray-400 text-sm px-2 text-color"
             onChange={(e) => setSortType(e.target.value)}
           >
-            <option value="relavent"> Relevent</option>
-            <option value="low-hight"> Low to High</option>
-            <option value="hight-low">High to Low</option>
+            <option value="relavent">Liên quan</option>
+            <option value="low-hight">Thấp đến cao</option>
+            <option value="hight-low">Cao đến thấp</option>
           </select>
         </div>
 

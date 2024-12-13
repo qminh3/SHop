@@ -73,7 +73,7 @@ const Testimonials = () => {
         {/* header section */}
         <div className="text-center mb-10 max-w-[600px] mx-auto">
           <p data-aos="fade-up" className="text-xl text-primary-50">
-            What our customers are saying
+            Khách hàng nói gì sau khi mua
           </p>
           <h1 data-aos="fade-up" className="text-3xl font-bold">
           Feedback

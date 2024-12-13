@@ -11,20 +11,50 @@ const getDefaultCart = () => {
   }
   return cart;
 };
+
 export const ShopContext = createContext();
+
 const ShopContextProvider = (props) => {
   const currency = "$";
   const delivery_fee = 10;
   const backendUrl = "http://localhost:3000";
   // const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  
+  // Current states
   const [token, setToken] = useState("");
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const [cartItems, setCartItems] = useState({});
   const navigate = useNavigate();
-
   const [products, setProducts] = useState([]);
+  
+  // New state for user info
+  const [userInfo, setUserInfo] = useState(null);
 
+  // Function to fetch user data from API
+  const getUserInfo = async (token) => {
+    if (!token) return;
+
+    try {
+      const response = await axios.get(`${backendUrl}/api/user/me`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setUserInfo(response.data.data);
+    } catch (error) {
+      /* toast.error("Failed to fetch user information."); */
+      console.error(error);
+    }
+  };
+
+  // Fetch user info when the token changes
+  useEffect(() => {
+    if (token) {
+      getUserInfo(token);
+    }
+  }, [token]);
+
+  // Continue with existing functions...
+  
   const addToCart = async (itemId, size) => {
     // Implementing a basic validation for size selection
     if (!size) {
@@ -73,6 +103,7 @@ const ShopContextProvider = (props) => {
     }
     return count;
   };
+
   const updateQuanity = async (itemId, size, quantity) => {
     const cartData = structuredClone(cartItems);
     cartData[itemId][size] = quantity;
@@ -156,7 +187,6 @@ const ShopContextProvider = (props) => {
     getProductsData();
   }, []);
 
-  
   useEffect(() => {
     if (!token && localStorage.getItem("token")) {
       setToken(localStorage.getItem("token"));
@@ -173,6 +203,8 @@ const ShopContextProvider = (props) => {
     backendUrl,
     cartItems,
     token,
+    userInfo,  // Exposing user info to context
+    setUserInfo,  // Exposing function to update user info
     setCartItems,
     setSearch,
     setShowSearch,
@@ -188,4 +220,5 @@ const ShopContextProvider = (props) => {
     <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>
   );
 };
+
 export default ShopContextProvider;

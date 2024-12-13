@@ -19,12 +19,12 @@ const LatestCollection = () => {
           <p data-aos="fade-up" className="text-3xl text-primary-50">
           LATEST COLLECTION
           </p>
-          <h1
+          {/* <h1
             data-aos="fade-up"
             className="text-xl font-bold text-primary-500 "
           >
              Our best latest product is here.
-          </h1>
+          </h1> */}
         </div>
       {/* trend */}
       

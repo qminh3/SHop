@@ -8,22 +8,23 @@ const ImageList = [
   {
     id: 1,
     image: Image1,
-    title: "Upto 70% off on all Men Wear",
-    description: "Discover the latest fashion and style trends",
+    title: "Giảm giá đến 70%",
+    description: "Khám phá các xu hướng thời trang và phong cách mới nhất với mức giảm giá hấp dẫn.",
   },
   {
     id: 2,
     image: Image2,
-    title: "30% off on all Women's Wea",
-    description: "Experience the convenience and freedom of online shopping",
+    title: "Giảm đến 30% cho thời trang nam",
+    description: "Trải nghiệm mua sắm đồ nam với mức giảm giá lên tới 30% ngay hôm nay.",
   },
   {
     id: 3,
     image: Image3,
-    title: "Upto 50% off on all Men's Wear",
-    description: "Get ready for the next wave of fashion and style",
+    title: "Giảm đến 70% cho thời trang nữ",
+    description: "Sẵn sàng cho bộ sưu tập thời trang nữ mới với ưu đãi giảm giá lên tới 70%.",
   },
 ];
+
 const Hero1 = ({ handleOrderPopup }) => {
   var settings = {
     dots: false,

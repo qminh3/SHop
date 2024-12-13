@@ -15,10 +15,10 @@ const loginUser = async (req, res) => {
     if (!user) {
       return res.status(400).json({ message: "Tài khoản không tồn tại" });
     }
-
     const isMatch = await bcrypt.compare(password, user.password);
     if (isMatch) {
       const token = createToken(user._id);
+      console.log(token);
       res.status(200).json({ message: "Mật khẩu đúng", success: true, token });
     } else {
       return res
@@ -73,6 +73,49 @@ const registerUser = async (req, res) => {
   }
 };
 
+const getMyInfo = async (req, res) => {
+  try {
+    const user = await userModel.findById(req.body.userId);
+
+    if (!user) {
+      return res.status(404).json({ message: "Không tìm thấy người dùng", success: false });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Lấy thông tin người dùng thành công",
+      data: user,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Lỗi server", success: false });
+  }
+};
+
+const getMyNameEmailPassword = async (req, res) => {
+  try {
+    const user = await userModel.findById(req.body.userId).select("name email");
+
+    if (!user) {
+      return res.status(404).json({ message: "Không tìm thấy người dùng", success: false });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Lấy thông tin người dùng thành công",
+      data: user,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Lỗi server", success: false });
+  }
+};
+
+
+
+
+
+
 // kiểm tra đăng nhập->admin
 const adminLogin = async (req, res) => {
   try {
@@ -90,4 +133,4 @@ const adminLogin = async (req, res) => {
   }
 };
 
-export { loginUser, registerUser, adminLogin };
+export { loginUser, registerUser, adminLogin,getMyInfo,getMyNameEmailPassword };
