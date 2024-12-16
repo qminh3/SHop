@@ -1,7 +1,7 @@
-///frontend
-cd frontend
-npm install
-npm run dev
-///backend
-npm install
-npm start
+///frontend/n
+cd frontend/n
+npm install/n
+npm run dev/n
+///backend/n
+npm install/n
+npm start/n
