@@ -47,10 +47,10 @@ Use the following credentials to access different parts of the application:
 
 ### Admin Account
 
-- **Username:** `admin`
-- **Password:** `admin123`
+- **Username:** `quangminh@gmail.com`
+- **Password:** `123456789`
 
 ### User Account
 
-- **Username:** `user`
-- **Password:** `user123`
+- **Username:** `thuan1@gmail.com`
+- **Password:** `123456789`
